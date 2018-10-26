@@ -1,0 +1,23 @@
+{
+	"name": "innoweb/silverstripe-requirements-resolver",
+	"description": "Helper module to resolve the path to global requirements like jQuery and the like.",
+	"type": "silverstripe-vendormodule",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "requirements", "resolve", "global", "jquery"],
+	"authors": [{
+		"name": "Florian Thoma",
+		"homepage": "http://www.innoweb.com.au"
+	}],
+	"require": {
+        "silverstripe/cms": "^4.2.1",
+        "silverstripe/vendor-plugin": "^1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Innoweb\\RequirementsResolver\\": "src/"
+		}
+	},
+    "suggest": {
+        "innoweb/silverstripe-bundled-userforms": "Bundles the requirements for UserForms using the requirements-resolver module."
+	}
+}
