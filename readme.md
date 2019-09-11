@@ -6,6 +6,8 @@ Helper module to resolve the path to global requirements like jQuery, and the li
 
 It helps making sure that only one version of a certain library is included for a site.
 
+It also makes sure that when a JS requirement is called twice, once with defer/async and once without, the requirement is included without async/defer to make sure all js code works.
+
 ## Requirements
 
 SilverStripe CMS 4.2, see [composer.json](composer.json)
