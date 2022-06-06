@@ -3,9 +3,9 @@ Name: innoweb-requirements-resolver
 ---
 Innoweb\RequirementsResolver\RequirementsResolver:
   requirements:
-    jquery: '//code.jquery.com/jquery-3.3.1.min.js'
-    'jquery-validate': '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js'
-    'jqueryui-js': '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+    jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+    'jquery-validate': '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js'
+    'jqueryui-js': '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'
 
 SilverStripe\Core\Injector\Injector:
   SilverStripe\View\Requirements_Backend:
