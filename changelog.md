@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.1]
+
+* update jquery validate
+
 ## [1.2.0]
 
 * update libraries to latest versions, load all libraries from cloudflare by default
