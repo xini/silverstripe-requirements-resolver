@@ -10,7 +10,9 @@ It also makes sure that when a JS requirement is called twice, once with defer/a
 
 ## Requirements
 
-SilverStripe CMS 4.2, see [composer.json](composer.json)
+SilverStripe CMS 5, see [composer.json](composer.json)
+
+Note: this version is compatible with Silverstripe 5. For Silverstripe 4, please see the [1 release line](https://github.com/xini/silverstripe-requirements-resolver/tree/1).
 
 ## Installation
 
