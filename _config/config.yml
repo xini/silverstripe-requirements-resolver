@@ -3,7 +3,7 @@ Name: innoweb-requirements-resolver
 ---
 Innoweb\RequirementsResolver\RequirementsResolver:
   requirements:
-    jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js'
+    jquery: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js'
     'jquery-validate': '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js'
     'jqueryui-js': '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'
 
