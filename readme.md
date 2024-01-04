@@ -4,6 +4,8 @@
 
 Helper module to resolve the path to global requirements like jQuery, and the like. 
 
+This was built for Silverstripe 4 because the local jQuery and jQuery validate versions in framework were outdated and we needed a way to override those with a newer/more secure version. 
+
 It helps making sure that only one version of a certain library is included for a site.
 
 It also makes sure that when a JS requirement is called twice, once with defer/async and once without, the requirement is included without async/defer to make sure all js code works.
@@ -44,9 +46,9 @@ Requirements::javascript(
 The following requirements are pre-configured in the module's config:
 
 ```
-'jquery': '//code.jquery.com/jquery-3.3.1.min.js'
-'jquery-validate': '//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js'
-'jqueryui-js': '//code.jquery.com/ui/1.12.1/jquery-ui.min.js'
+jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
+'jquery-validate': 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js'
+'jqueryui-js': 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'
 ```
 
 Additional requirements can be added the the module's config:
