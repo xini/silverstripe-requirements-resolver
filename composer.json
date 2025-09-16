@@ -9,15 +9,11 @@
 		"homepage": "https://www.innoweb.com.au"
 	}],
 	"require": {
-        "silverstripe/cms": "^5",
-        "silverstripe/vendor-plugin": "^2"
+        "silverstripe/cms": "^6"
 	},
 	"autoload": {
 		"psr-4": {
 			"Innoweb\\RequirementsResolver\\": "src/"
 		}
-	},
-    "suggest": {
-        "innoweb/silverstripe-bundled-userforms": "Bundles the requirements for UserForms using the requirements-resolver module."
 	}
 }

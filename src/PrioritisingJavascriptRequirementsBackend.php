@@ -19,11 +19,13 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
      * - 'async' : Boolean value to set async attribute to script tag
      * - 'defer' : Boolean value to set defer attribute to script tag
      * - 'type' : Override script type= value.
+     * - 'integrity' : SubResource Integrity hash
+     * - 'crossorigin' : Cross-origin policy for the resource
      */
-    public function javascript($file, $options = array())
+    public function javascript($file, $options = [])
     {
         $file = ModuleResourceLoader::singleton()->resolvePath($file);
-        
+
         // Get type
         $type = null;
         if (isset($this->javascript[$file]['type'])) {
@@ -32,7 +34,7 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         if (isset($options['type'])) {
             $type = $options['type'];
         }
-        
+
         // make sure that async/defer is NOT set if it is set to false once. If it is requested to be non async/defer once, it should not be asynced/deferred
         $async = (
             (
@@ -56,7 +58,9 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
                 && $this->javascript[$file]['defer'] == true
             )
         );
-        
+        $integrity = $options['integrity'] ?? null;
+        $crossorigin = $options['crossorigin'] ?? null;
+
         $this->javascript[$file] = [];
         if ($type) {
             $this->javascript[$file]['type'] = $type;
@@ -67,10 +71,12 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         if ($defer) {
             $this->javascript[$file]['defer'] = true;
         }
-        
+        $this->javascript[$file]['integrity'] = $integrity;
+        $this->javascript[$file]['crossorigin'] = $crossorigin;
+
         // Record scripts included in this file
         if (isset($options['provides'])) {
-            $this->providedJavascript[$file] = array_values($options['provides']);
+            $this->providedJavascript[$file] = array_values($options['provides'] ?? []);
         }
     }
 }
