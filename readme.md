@@ -12,9 +12,7 @@ It also makes sure that when a JS requirement is called twice, once with defer/a
 
 ## Requirements
 
-SilverStripe CMS 5, see [composer.json](composer.json)
-
-Note: this version is compatible with Silverstripe 5. For Silverstripe 4, please see the [1 release line](https://github.com/xini/silverstripe-requirements-resolver/tree/1).
+SilverStripe CMS 6, see [composer.json](composer.json)
 
 ## Installation
 
@@ -47,8 +45,8 @@ The following requirements are pre-configured in the module's config:
 
 ```
 jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
-'jquery-validate': 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js'
-'jqueryui-js': 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js'
+'jquery-validate': 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js'
+'jqueryui-js': 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js'
 ```
 
 Additional requirements can be added the the module's config:
