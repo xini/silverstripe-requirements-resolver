@@ -23,10 +23,8 @@ class RequirementsResolver implements TemplateGlobalProvider
     public static function get($key)
     {
         $all = static::get_all();
-        if ($all && !empty($all)) {
-            if (isset($all[$key])) {
-                return $all[$key];
-            }
+        if ($all && !empty($all) && isset($all[$key])) {
+            return $all[$key];
         }
 
         return null;
@@ -34,8 +32,8 @@ class RequirementsResolver implements TemplateGlobalProvider
 
     public static function get_template_global_variables()
     {
-        return array(
+        return [
             'ResolveRequirement' => 'get',
-        );
+        ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Innoweb\RequirementsResolver;
 
+use Override;
 use SilverStripe\Core\Injector\Injectable;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
 use SilverStripe\View\Requirements_Backend;
@@ -22,6 +23,7 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
      * - 'integrity' : SubResource Integrity hash
      * - 'crossorigin' : Cross-origin policy for the resource
      */
+    #[Override]
     public function javascript($file, $options = [])
     {
         $file = ModuleResourceLoader::singleton()->resolvePath($file);
@@ -31,6 +33,7 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         if (isset($this->javascript[$file]['type'])) {
             $type = $this->javascript[$file]['type'];
         }
+
         if (isset($options['type'])) {
             $type = $options['type'];
         }
@@ -38,10 +41,10 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         // make sure that async/defer is NOT set if it is set to false once. If it is requested to be non async/defer once, it should not be asynced/deferred
         $async = (
             (
-                isset($options['async']) && isset($options['async']) === true
+                isset($options['async']) && isset($options['async'])
                 && !isset($this->javascript[$file])
             ) || (
-                isset($options['async']) && isset($options['async']) === true
+                isset($options['async']) && isset($options['async'])
                 && isset($this->javascript[$file])
                 && isset($this->javascript[$file]['async'])
                 && $this->javascript[$file]['async'] == true
@@ -49,10 +52,10 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         );
         $defer = (
             (
-                isset($options['defer']) && isset($options['defer']) === true
+                isset($options['defer']) && isset($options['defer'])
                 && !isset($this->javascript[$file])
             ) || (
-                isset($options['defer']) && isset($options['defer']) === true
+                isset($options['defer']) && isset($options['defer'])
                 && isset($this->javascript[$file])
                 && isset($this->javascript[$file]['defer'])
                 && $this->javascript[$file]['defer'] == true
@@ -65,12 +68,15 @@ class PrioritisingJavascriptRequirementsBackend extends Requirements_Backend
         if ($type) {
             $this->javascript[$file]['type'] = $type;
         }
+
         if ($async) {
             $this->javascript[$file]['async'] = true;
         }
+
         if ($defer) {
             $this->javascript[$file]['defer'] = true;
         }
+
         $this->javascript[$file]['integrity'] = $integrity;
         $this->javascript[$file]['crossorigin'] = $crossorigin;
 
